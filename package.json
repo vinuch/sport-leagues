@@ -15,6 +15,7 @@
     "vue-router": "^3.1.5",
     "vuetify": "^2.2.11"
   },
+  "resolutions": { "eslint-loader": "2.1.2" },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",
     "@vue/cli-plugin-eslint": "^4.2.0",

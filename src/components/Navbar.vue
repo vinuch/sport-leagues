@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar outlined flat app color="white" class="nav">
+    <v-toolbar outlined flat color="white" class="nav">
 
 
 
@@ -12,14 +12,29 @@
           
         </ul>
         <v-spacer></v-spacer>
-        <ul class="nav-links d-flex">
-            <li class="nav-link">
+        <ul class="nav-links d-flex mr-2">
+          <v-divider vertical></v-divider>
+          <li class="nav-link px-3">
             <v-icon>notifications</v-icon>
           </li>
-          <li class="nav-link">
-            Mary
-          </li>
-        </ul>
+          <v-divider vertical></v-divider>
+          
+         </ul>   
+          <div>
+            
+            <v-list-item two-line :class="miniVariant && 'px-0'">
+            <v-list-item-avatar>
+              <img src="https://randomuser.me/api/portraits/men/81.jpg">
+            </v-list-item-avatar>
+
+            <v-list-item-content style="width:10rem">
+              <v-list-item-title class="subtitle-2 grey--text">Linnette Simmons</v-list-item-title>
+              <v-list-item-subtitle class="subtitle-1">1823.23$ <span class="caption">6385 PLN</span></v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+          
+          </div>
+        
         <!-- <v-divider></v-divider> -->
         
 
@@ -27,11 +42,10 @@
      
       
      
-    </v-app-bar>
+    </v-toolbar>
     <v-divider></v-divider>
 
     <v-navigation-drawer
-      v-model="drawer"
       left
       app
       expand-on-hover
@@ -46,26 +60,26 @@
           <v-icon>sort</v-icon>
         </v-list-item>
         <v-divider></v-divider>
-        <v-list-item class="primary--text" router to="dashboard">
+        <v-list-item router to="dashboard">
           <v-list-item-icon >
-            <v-icon>dashboard</v-icon>
+            <v-icon class="sidebar-icon">dashboard</v-icon>
           </v-list-item-icon>
           <v-list-item-title>
             dashboard
           </v-list-item-title>
         </v-list-item>
         <v-list-item>
-          <v-icon>subscriptions</v-icon>
+          <v-icon class="sidebar-icon">subscriptions</v-icon>
         </v-list-item>
         <v-list-item>
-          <v-icon>star</v-icon>
+          <v-icon class="sidebar-icon">star</v-icon>
         </v-list-item>
 
         <v-divider></v-divider>
 
-        <v-list-item class="primary--text" v-for="sport in sports" :key="sport.name" router :to="sport.name">
-          <v-list-item-icon class="py-5">
-            <v-icon  size="27">{{ sport.icon }}</v-icon>
+        <v-list-item class="sidebar-link" v-for="sport in sports" :key="sport.name" router :to="sport.name">
+          <v-list-item-icon tile class="py-5">
+            <v-icon class="sidebar-icon" size="30">{{ sport.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-title>{{ sport.name }}</v-list-item-title>
@@ -109,6 +123,10 @@
 </script>
 
 <style scoped>
+header.nav.v-sheet.v-sheet--tile.theme--light.v-toolbar.v-toolbar--flat.white{
+  margin-left: 2rem;
+}
+
 .nav-links {
   padding: 0;
   margin: 0;
@@ -119,7 +137,7 @@
 }
 .nav-link a {
   text-decoration: none;
-  color: grey;
+  color: #dadada;
   font-weight: bold;
 }
 .nav-link a:hover, .nav-link a.router-link-exact-active {
@@ -129,10 +147,31 @@
   margin-top: 2px solid black;
 }
 
-.sidebar a.primary--text.v-list-item--active.v-list-item.v-list-item--link.theme--light {
-  border-left: 4px solid #603ce9;
+
+.sidebar-link {
+  margin: 3px -7.5px 0 ;
+  padding: .4rem;
 }
-  .v-toolbar__content{
-  border-bottom: 3px solid black ;
+.sidebar .sidebar-icon {
+  color: #dadada;
+}
+.theme--light.v-list {
+  background-color: none !important;
+}
+div.v-list-item {
+  padding: .4rem;
+
+}
+a.v-list-item--active.v-list-item {
+  color: #603cea;
+}
+.v-list-item--active::before {
+  background-color: transparent;
+}
+.v-list--nav .v-list-item{
+  border-radius: 0;
+}
+.v-list-item--active{
+  border-left: 2px solid #603cea ;
 }
 </style>

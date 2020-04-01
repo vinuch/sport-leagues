@@ -43,7 +43,7 @@
       
      
     </v-toolbar>
-    <v-divider></v-divider>
+    <v-divider inset></v-divider>
 
     <v-navigation-drawer
       left

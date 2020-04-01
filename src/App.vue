@@ -2,11 +2,11 @@
   <v-app>
     <Navbar />
     <v-content>
-      <div class="mx-4">
+      <div class="mx">
         <router-view></router-view>
       </div>
-      
     </v-content>
+    
   </v-app>
 </template>
 
@@ -28,6 +28,6 @@ export default {
 
 <style scoped>
   main.v-content {
-    padding: 1.5rem !important;
+    padding: 1rem 1.5rem !important;
   }
 </style>

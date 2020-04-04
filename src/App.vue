@@ -29,5 +29,7 @@ export default {
 <style scoped>
   main.v-content {
     padding: 1rem 1.5rem !important;
+    margin-top: 3rem;
+
   }
 </style>

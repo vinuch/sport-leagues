@@ -1,10 +1,7 @@
 <template>
   <div>
-    <v-toolbar outlined flat color="white" class="nav">
+    <v-app-bar fixed outlined elevate-on-scroll color="white" class="nav">
 
-
-
-      
         <ul class="nav-links d-flex">
           <li v-for="link in links" :key="link.text" class="nav-link">
             <router-link  text  class="text-capitalize "  router :to="link.route">{{ link.text }}</router-link>
@@ -28,7 +25,7 @@
             </v-list-item-avatar>
 
             <v-list-item-content style="width:10rem">
-              <v-list-item-title class="subtitle-2 grey--text">Linnette Simmons</v-list-item-title>
+              <v-list-item-title class="subtitle-2 grey--text">Klaus Mikelson</v-list-item-title>
               <v-list-item-subtitle class="subtitle-1">1823.23$ <span class="caption">6385 PLN</span></v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
@@ -42,7 +39,7 @@
      
       
      
-    </v-toolbar>
+    </v-app-bar>
     <v-divider inset></v-divider>
 
     <v-navigation-drawer
@@ -50,9 +47,9 @@
       app
       expand-on-hover
       permanent
-      mini-variant
       primary
       width="200px"
+      fixed
       >
 
       <v-list dense nav p-y0 class="sidebar">
@@ -123,8 +120,8 @@
 </script>
 
 <style scoped>
-header.nav.v-sheet.v-sheet--tile.theme--light.v-toolbar.v-toolbar--flat.white{
-  margin-left: 2rem;
+ header.nav {
+    margin-left: 3rem ;
 }
 
 .nav-links {
